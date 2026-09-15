@@ -1,0 +1,26 @@
+---
+name: "bootstrap-e2e-35032155192-1-micromamba-embedded-create-repository"
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  # ── Python runtime (required by pre-commit) ─────────────────────────────────
+  - python=3.13
+
+  # ── Node.js runtime (required by npm tooling tasks) ───────────────────────
+  - nodejs=24
+
+  # ── Python tooling package manager (drives pre-commit + lint hooks) ──────────
+  - uv=0.11.30
+
+  # ── Linting / formatting tools (used as language: system hooks) ─────────────
+  - prettier=3.9.3 # JSON / YAML / Markdown formatter
+  - markdownlint-cli=0.49.1 # Markdown linter
+  - taplo=0.10.0 # TOML formatter + validator
+  - go-shfmt=3.13.1 # shell formatter (provides shfmt binary)
+  - shellcheck=0.11.0 # shell linter
+  - actionlint=1.7.12 # GitHub Actions workflow linter
+  - terraform=1.15.6 # Terraform (includes terraform fmt)
+  - libxml2=2.15.3 # provides xmllint binary for XML validation
+  - jq=1.8.2 # JSON processor
+  - coreutils=9.11 # GNU coreutils for consistent cross-platform behaviour
